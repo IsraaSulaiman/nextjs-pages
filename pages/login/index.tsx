@@ -25,7 +25,7 @@ function Login() {
     password: "changeme",
   });
   if (loggedIn) {
-    console.log(loggedIn, "products redirect");
+    // console.log(loggedIn, "products redirect");
     router.push("/products");
   }
 
@@ -34,7 +34,7 @@ function Login() {
     const resp: any = await login(loginCreds);
     cookieManager.set({ name: "TK", body: resp.access_token });
     // get user info
-    console.log("login");
+    // console.log("login");
     const profile = await getProfile();
     if (profile) {
       context.setUser(profile);

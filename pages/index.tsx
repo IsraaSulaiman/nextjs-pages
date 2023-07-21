@@ -1,8 +1,7 @@
 import { Hero } from "@/components";
 import CategoryList, { Category } from "@/components/category-list";
-import { Apis } from "@/constants/apis";
 import { getCategories } from "@/lib/data";
-import { GetStaticProps } from "next";
+import { GetServerSideProps } from "next";
 import Head from "next/head";
 
 interface HomeProps {
@@ -31,7 +30,7 @@ export default function Home(props: HomeProps) {
   );
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const categories = await getCategories();
   return {
     props: {
